@@ -20,7 +20,7 @@ namespace family{
 
         public:
         Tree(string name){this->root = new Person(name);}
-        ~Tree();
+        ~Tree(){}
 
         Tree& addFather(string name,string father);
         Tree& addMother(string name,string mother);
