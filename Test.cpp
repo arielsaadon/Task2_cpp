@@ -86,25 +86,24 @@ TEST_CASE("Yosef Tree case") {
 	CHECK_THROWS_AS(T.find("great-great-grandfather"),exception);
 	T.addFather("Avraham", "Ido");
 	T.remove("Avi");
-	CHECK_THROWS_AS(T.addFather("Avi", "Israel");,exception);
+	CHECK_THROWS_AS(T.addFather("Avi", "Israel"),exception);
 	T.addFather("Rachel", "Shmual");
 	T.remove("Isaac");
 	T.remove("Rivka");
 	T.remove("Ruti");
-	CHECK_THROWS_AS(T.find("grandfather"),exception);
 	CHECK_THROWS_AS(T.find("grandmother"),exception);
-	CHECK_THROWS_AS(T.addFather("Isaac", "Avraham");,exception);
-	CHECK_THROWS_AS(T.addMother("Isaac", "Ruti");,exception);
-	CHECK_THROWS_AS(T.addFather("Rivka", "Israel");,exception);
-	CHECK_THROWS_AS(T.addMother("Rivka", "Sara");,exception);
+	CHECK_THROWS_AS(T.addFather("Isaac", "Avraham"),exception);
+	CHECK_THROWS_AS(T.addMother("Isaac", "Ruti"),exception);
+	CHECK_THROWS_AS(T.addFather("Rivka", "Israel"),exception);
+	CHECK_THROWS_AS(T.addMother("Rivka", "Sara"),exception);
 	T.remove("Yaakov");
 	T.remove("Rachel");
 	CHECK_THROWS_AS(T.find("father"),exception);
 	CHECK_THROWS_AS(T.find("mother"),exception);
-	CHECK_THROWS_AS(T.addFather("Yaakov", "Avraham");,exception);
-	CHECK_THROWS_AS(T.addMother("Yaakov", "Ruti");,exception);
-	CHECK_THROWS_AS(T.addFather("Rachel", "Avraham");,exception);
-	CHECK_THROWS_AS(T.addMother("Rachel", "Ruti");,exception);
+	CHECK_THROWS_AS(T.addFather("Yaakov", "Avraham"),exception);
+	CHECK_THROWS_AS(T.addMother("Yaakov", "Ruti"),exception);
+	CHECK_THROWS_AS(T.addFather("Rachel", "Avraham"),exception);
+	CHECK_THROWS_AS(T.addMother("Rachel", "Ruti"),exception);
 }
 
 TEST_CASE("Strange string Tree case") {  
@@ -163,15 +162,16 @@ TEST_CASE("Strange string Tree case") {
 	CHECK_THROWS_AS(T.find("great-grandmother"),exception);
 	T.addMother("IRis-", "aB3igaIl");
 	T.remove("fEliXX");
-	CHECK_THROWS_AS(T.addFather("eLi9", "Israel");,exception);
-	CHECK_THROWS_AS(T.addMother("eLi9", "Ruti");,exception);
+	CHECK_THROWS_AS(T.addFather("eLi9", "Israel"),exception);
+	CHECK_THROWS_AS(T.addMother("eLi9", "Ruti"),exception);
 	CHECK_THROWS_AS(T.find("great-grandfather"),exception);
 	T.addFather("OliVeR$", "fEliXX");
 	T.remove("osC7ar");
 	CHECK_THROWS_AS(T.find("grandfather"),exception);
 	T.remove("#miA");
-	CHECK_THROWS_AS(T.addFather("#miA", "Avraham");,exception);
-	CHECK_THROWS_AS(T.addMother("#miA", "Ruti");,exception);
+	CHECK_THROWS_AS(T.addFather("#miA", "Avraham"),exception);
+	CHECK_THROWS_AS(T.addMother("#miA", "Ruti"),exception);
+	T.remove("fEliXX");
 	CHECK_THROWS_AS(T.find("father"),exception);
 	CHECK_THROWS_AS(T.find("mother"),exception);
 }
