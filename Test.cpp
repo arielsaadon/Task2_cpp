@@ -4,7 +4,7 @@
 #include <string>
 using namespace std;
 
-TEST_CASE("Basic add Tree case") { 
+TEST_CASE("Reference add Tree case") { 
 	family::Tree T ("Yosef");
 	T.addFather("Yosef", "Yaakov")
 	 .addMother("Yosef", "Rachel")
@@ -84,8 +84,10 @@ TEST_CASE("Yosef Tree case") {
 
 	T.remove("Yosi");
 	CHECK_THROWS_AS(T.find("great-great-grandfather"),exception);
+	T.addFather("Avraham", "Ido");
 	T.remove("Avi");
 	CHECK_THROWS_AS(T.addFather("Avi", "Israel");,exception);
+	T.addFather("Rachel", "Shmual");
 	T.remove("Isaac");
 	T.remove("Rivka");
 	T.remove("Ruti");
@@ -159,10 +161,12 @@ TEST_CASE("Strange string Tree case") {
 
 	T.remove("aB3igaIl");
 	CHECK_THROWS_AS(T.find("great-grandmother"),exception);
+	T.addMother("IRis-", "aB3igaIl");
 	T.remove("fEliXX");
 	CHECK_THROWS_AS(T.addFather("eLi9", "Israel");,exception);
 	CHECK_THROWS_AS(T.addMother("eLi9", "Ruti");,exception);
 	CHECK_THROWS_AS(T.find("great-grandfather"),exception);
+	T.addFather("OliVeR$", "fEliXX");
 	T.remove("osC7ar");
 	CHECK_THROWS_AS(T.find("grandfather"),exception);
 	T.remove("#miA");
