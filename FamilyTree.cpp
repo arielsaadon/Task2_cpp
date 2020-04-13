@@ -11,15 +11,15 @@ Tree& Tree::addFather(string name,string father){
 Tree& Tree::addMother(string name,string mother){
     return *this;
 }
-string relation(string person){
-    return "l";
+string Tree::relation(string person){
+    return "";
 }
-string find(string relation){
-    return "l";
+string Tree::find(string relation){
+    return "";
 }
-void display(){
+void Tree::display(){
 
 }
-void remove(string name){
+void Tree::remove(string name){
 
 }
